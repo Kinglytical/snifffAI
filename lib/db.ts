@@ -12,3 +12,9 @@ const prisma =
       connectionString: process.env.DATABASE_URL!,
     }),
   });
+
+if (process.env.NODE_ENV !== "production") {
+    globalAsPrisma.prisma = prisma;
+}
+
+export default prisma;
